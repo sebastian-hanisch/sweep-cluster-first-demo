@@ -111,7 +111,7 @@ with st.sidebar:
                          help="In der Ecke überstreichen die Winkel nur einen Viertelkreis: Die Keile des Sweeps sind dort lang und dünn.")
     routes = st.slider("Zielroutenzahl", *bounds("routes_slider"), key="routes_slider", help="Legt zusammen mit der Auslastung die Kapazität fest; mehr Zielrouten heißt kürzere Routen und dünnere Keile.")
     fill = st.slider("Auslastung (%)", *bounds("fill_slider"), step=C.FILL_STEP, key="fill_slider",
-                     help="Kapazität = aufgerundet Gesamtnachfrage geteilt durch (Zielroutenzahl mal Auslastung). Bei hoher Auslastung ist die Kapazität knapp: Der Sweep braucht dann oft mehr Routen als nötig.")
+                     help="Kapazität = aufgerundet Gesamtnachfrage geteilt durch (Zielroutenzahl mal Auslastung). Bei hoher Auslastung ist die Kapazität knapp: Bei kleinen Instanzen (n = 10 bis 12) und kurzen Routen braucht der Sweep dann oft mehr Routen als nötig.")
     seed = st.number_input("Zufalls-Seed der Instanz", *bounds("seed_input"), key="seed_input", step=1)
     st.button("🎲 Neue Instanz generieren", width="stretch", on_click=randomize_seed)
 
